@@ -1,0 +1,39 @@
+#ifndef TCP_CLIENT_H
+#define TCP_CLIENT_H
+
+#include <QDebug>
+
+#include <sys/socket.h>
+#include <locale.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+
+class TCP_client{
+
+    char *IPAddress;
+    const uint8_t Port;
+    const uint16_t BUFFER_SIZE = 1024;
+    struct sockaddr_in serv_addr;
+    int sock;
+
+    public:
+        explicit MyTcpSocket();
+        ~MyTcpSocket();
+        uint16_t getBufferSize();
+        uint16_t ConnectToHost(const QHostAddress& Server, int port);
+        int SendMessage(const char *data);
+
+};
+
+#endif // TCP_CLIENT_H
+
+
+//     snprintf(buffer,
+//              BUFFER_SIZE,
+//              "{\"deviceId\": \"Raspberry Pi\", "
+//              "\"S1_Name\": \"%s\", "
+//              "\"S1_MAX\": %.3f, "
+//              "\"S1_MIN\": %.3f, "
+//              "\"S1_AVG\": %.3f "
+//              " }",
+//              str, max, min, mean);
