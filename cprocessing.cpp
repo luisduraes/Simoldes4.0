@@ -296,9 +296,10 @@ void CProcessing::timerEvent(QTimerEvent *){
     workerThread->start();
 }
 
+
 /*
  * SPI Auxiliar Timer Event
- * Brief Description: Creates a new thread and a new I2C Client, then,
+ * Brief Description: Creates a new thread and a new SPI_Aux_Client, then,
  * moves the I2C Client to the thread as it will run inside of it.
  * Assigns multiple signals to its slots, for control and redirecting purposes.
  * Starts the thread.
