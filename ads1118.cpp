@@ -33,6 +33,8 @@ void ADS1118::FileWriteHeader(){
     file_ad1118.close();
 }
 
+
+
 void ADS1118::getBuffers(uint8_t **rBuf, uint8_t **tBuf){
 
     *rBuf = (uint8_t *) ADS_MISO;
