@@ -41,6 +41,8 @@ void ADS1118::getBuffers(uint8_t **rBuf, uint8_t **tBuf){
     *tBuf = (uint8_t *) ADS_MOSI;
 }
 
+
+
 uint8_t ADS1118::getChipSelect(){
 
     return ChipSelect;
